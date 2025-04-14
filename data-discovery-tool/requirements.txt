@@ -1,0 +1,12 @@
+﻿transformers
+torch
+scikit-learn
+pandas
+numpy
+spacy
+psycopg2
+sqlalchemy
+pgvector
+sentence-transformers
+flake8
+pytest
