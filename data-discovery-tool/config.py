@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #  Project root
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 #  Environment type (can be set via `.env`)
 APP_ENV = os.getenv("APP_ENV", "development")
