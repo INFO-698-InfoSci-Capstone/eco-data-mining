@@ -1,0 +1,36 @@
+import sqlite3
+
+db_path = r"C:\Users\VikRuhil\Desktop\MS DS\Capstone\Eco Data Mining\eco-data-mining\data-discovery-tool\data\eco.db"
+
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+print("🔍 Showing filled (non-null, non-empty) journal entries...\n")
+
+columns = [
+    'id',
+    'title',
+    'location',
+    'date_published',
+    'creator',
+    'field_station_id',
+    'keyphrases',
+    'meta_json',
+    'full_text',
+    'created_at'
+]
+
+for col in columns:
+    query = f"SELECT COUNT(*) FROM journals WHERE {col} IS NOT NULL AND {col} != ''"
+    cursor.execute(query)
+    count = cursor.fetchone()[0]
+    print(f" - {col}: {count} filled entries")
+
+    # Optional: show a few example IDs
+    if col != 'id':  # skip id because it's always present
+        cursor.execute(f"SELECT id FROM journals WHERE {col} IS NOT NULL AND {col} != '' LIMIT 5")
+        examples = [row[0] for row in cursor.fetchall()]
+        print(f"   Examples: {examples}")
+
+conn.close()
+print("\n✅ Done listing filled entries.")

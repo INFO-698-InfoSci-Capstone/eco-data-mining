@@ -1,14 +1,21 @@
 # config.py
 
+import sys
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+# Ensure project root is in sys.path
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 # Load environment variables from .env file (if exists)
 load_dotenv()
 
 #  Project root
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 #  Environment type (can be set via `.env`)
 APP_ENV = os.getenv("APP_ENV", "development")
