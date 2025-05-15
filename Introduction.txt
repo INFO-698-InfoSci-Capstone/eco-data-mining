@@ -1,4 +1,4 @@
-##  Introduction to EcoMine
+##  Introduction to EcoMine: A Data Discovery Tool Intelligent Metadata Extraction from Ecological Archives
 
 > *“Transforming decades of ecological research into structured knowledge using AI.”*
 
