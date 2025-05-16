@@ -5,7 +5,7 @@ Authors:
     person(given = "Vik",
            family = "Ruhil", "vikruhil@arizona.edu", role = c("aut", "cre"))
     person(given= "Saksham",
-           family="Gupta","sakshamgupta9@arizona.edu",role=c("aut",cre"))
+           family="Gupta","sakshamgupta9@arizona.edu",role=c("aut", "cre"))
 Maintainer: Vik Ruhil <vikruhil@arizona.edu> 
             Saksham Gupta <sakshamgupta9@arizona.edu>
 Description: EcoMine is an AI-powered platform that extracts and structures ecological knowledge from research literature using deep learning. It enables fast, searchable, and interactive access to species data, methods, and trends for researchers, policymakers, and educators.
