@@ -6,7 +6,8 @@ Authors:
            family = "Ruhil", "vik.ruhil@arizona.edu", role = c("aut", "cre"))
     person(given= "Saksham",
            family="Gupta","sakshamgupta9@arizona.edu",role=c("aut",cre"))
-Maintainer: First Last <email@arizona.edu> --both name
+Maintainer: Vik Ruhil <vik.ruhil@arizona.edu> 
+            Saksham Gupta <sakshamgupta9@arizona.edu>
 Description: Research compendium for the project: Template--summary me
 License: OPEN License
 ByteCompile: true
