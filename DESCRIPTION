@@ -1,6 +1,6 @@
 Package: TemplateCompendium
 Title: "EcoMine: A Data Discovery Tool Intelligent Metadata Extraction from Ecological Archives"
-Version: 1.10.
+Version: 1.10.5
 Authors:
     person(given = "Vik",
            family = "Ruhil", "vikruhil@arizona.edu", role = c("aut", "cre"))
