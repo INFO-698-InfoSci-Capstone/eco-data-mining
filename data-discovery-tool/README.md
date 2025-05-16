@@ -144,15 +144,7 @@ Shows frequently used keyphrases across the journal dataset.
 
 ---
 
-### 3. Location Word Cloud
-
-Visualizes locations mentioned in the journal full text.
-
-![Location Word Cloud](data/images/location%20word%20cloud.png)
-
----
-
-### 4. Publication Over Time
+### 3. Publication Over Time
 
 Plots number of publications by year.
 
@@ -168,46 +160,87 @@ python scripts/visualize_journals.py
 
 ---
 
+## Contact
+
+For questions or collaborations, contact the maintainers or open an issue.
+
+---
+
 ## Data Handling and Best Practices
 
-- The SQLite database (`eco.db`) is excluded from the repository (see `.gitignore`) and should be managed locally.
-- Place `obfs_fieldstations.csv` and `neon_fieldstations.csv` in the `data/` directory.
-- Store large data files in S3, Zenodo, or institutional repositories.
+- The primary database (`eco.db`) is excluded from the repository (see `.gitignore`) to avoid versioning large binary files and comply with GitHub’s storage policies.
+- Curated field station lists (`obfs_fieldstations.csv`, `neon_fieldstations.csv`) must be placed in the `data/` directory for proper journal-to-station matching.
+- Large datasets and output files (e.g., raw text, embeddings, JSONL exports) should be stored externally using repositories such as Zenodo, Figshare, Amazon S3, or institutional storage platforms.
+
+**Limitations due to JSTOR/Constellate API deprecation**:
+- As of late 2024, JSTOR’s Constellate platform discontinued open access to bulk metadata and full-text download for many datasets, limiting the automated ingestion of fresh ecological literature.
+- The current dataset (50,000 journal records) reflects a snapshot from when access was granted. However, real-time updates, broader historical coverage, and additional metadata are now restricted unless explicitly licensed.
+
+> Resolution in progress: We plan to formally reach out to the Organization of Biological Field Stations (OBFS) and JSTOR/Constellate to:
+> - Request direct access to field station-tagged research publications.
+> - Propose a collaborative research partnership to support transparent field station mapping from historical literature.
+> - Ensure responsible use of copyrighted data under fair academic use or with negotiated access terms.
 
 ---
 
 ## Future Work and Enhancements
 
-- Train domain-specific NLP models.
-- Add topic modeling and embedding pipelines.
-- Develop REST API for journal search and linking.
-- Add Dash/Streamlit visual dashboards.
-- Integrate biodiversity and climate data.
+The current implementation provides the foundational infrastructure for ecological research metadata discovery. Planned upgrades include:
+
+- Domain-specific NLP modeling: Train custom spaCy or transformer-based NER models to improve field station recognition beyond general-purpose models.
+- Topic modeling and embeddings: Incorporate LDA, BERTopic, or SBERT for semantic clustering and search.
+- REST API development: Build an API layer to expose journal metadata, NLP-derived tags, and location mappings for external apps or researchers.
+- Streamlit or Dash dashboards: Create real-time dashboards for search, filtering, and spatial visualization of ecological literature by field station, year, or topic.
+- Field station name normalization: Add fuzzy matching pipelines to handle aliasing and local name inconsistencies.
+- External dataset integration: Enrich journal records with biodiversity, climate, or ecological observational data tied to locations or publication topics.
+
+Current Gaps:
+- Incomplete matching of field stations due to missing or implicit references in journal texts.
+- Limited historical depth in OBFS and NEON field station data.
+- Field station metadata lacks unique identifiers or consistent regional context in many entries.
 
 ---
 
 ## Contributing
 
-- Fork the repository.
-- Create a feature branch.
-- Commit changes and push to your fork.
-- Open a pull request.
+We welcome contributions from the ecological informatics, NLP, and data science communities. To contribute:
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/my-enhancement
+   ```
+3. Make your changes and commit:
+   ```bash
+   git commit -m "Add new visualization module"
+   ```
+4. Push to your fork and open a pull request with a description of the improvement.
+
+Please ensure your PR includes tests if applicable and aligns with the project’s modular architecture.
 
 ---
 
 ## License
 
-Specify license here (MIT, Apache 2.0, etc.)
+This project is licensed under MIT License.  
+All journal metadata is used under educational and research fair-use principles unless otherwise noted. Field station datasets are derived from publicly accessible sources or academic partner collaborations.
 
 ---
 
 ## Acknowledgments
 
-- OBFS and NEON for field station data.
-- spaCy, pandas, SQLAlchemy contributors.
+- JSTOR/Constellate for historical access to ecological journal metadata.
+- Organization of Biological Field Stations (OBFS) and NEON for field station directories.
+- Open-source communities of spaCy, SQLAlchemy, pandas, and Matplotlib for tooling and libraries.
+- This project was developed as part of the INFO 698 Capstone at the University of Arizona, with the support of the Data Science faculty and peers.
 
 ---
 
 ## Contact
 
-For questions or collaborations, contact the maintainers or open an issue.
+For collaborations, support, or academic inquiries:
+
+- GitHub Issues: https://github.com/INFO-698-InfoSci-Capstone/eco-data-mining/issues
+- Maintainers: Vik Ruhil, vikruhil@arizona.edu 
+	       Saksham Gupta sakshamgupta@arizona.edu
+- Institution: University of Arizona – School of Information (MSDS Capstone, Spring 2025)
