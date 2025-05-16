@@ -243,4 +243,4 @@ For collaborations, support, or academic inquiries:
 - GitHub Issues: https://github.com/INFO-698-InfoSci-Capstone/eco-data-mining/issues
 - Maintainers: Vik Ruhil, vikruhil@arizona.edu 
 	       Saksham Gupta sakshamgupta@arizona.edu
-- Institution: University of Arizona – School of Information (MSDS Capstone, Spring 2025)
+- Institution: University of Arizona – School of Information (MSIS Capstone, Spring 2025)
