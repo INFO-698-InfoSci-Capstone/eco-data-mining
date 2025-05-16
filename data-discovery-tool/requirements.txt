@@ -1,12 +1,29 @@
-﻿transformers
-torch
-scikit-learn
+﻿# Core dependencies
 pandas
 numpy
+SQLAlchemy
+
+# NLP and NER
 spacy
-psycopg2
-sqlalchemy
-pgvector
-sentence-transformers
-flake8
-pytest
+rapidfuzz
+
+# Visualization
+matplotlib
+seaborn
+wordcloud
+folium
+plotly
+
+# Interactive dashboards (optional)
+streamlit
+
+# Utilities and cleaning
+tqdm
+# Add to requirements.txt
+pyvis
+plotly
+folium
+wordcloud
+seaborn
+matplotlib
+networkx
