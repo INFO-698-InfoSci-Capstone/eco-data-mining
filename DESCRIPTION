@@ -1,12 +1,14 @@
 Package: TemplateCompendium
 Title: "EcoMine: A Data Discovery Tool Intelligent Metadata Extraction from Ecological Archives"
-Version: 1.0.0
+Version: 1.10.
 Authors:
-    person(given = "First",
-           family = "Last", "email@arizona.edu", role = c("aut", "cre"))
-Maintainer: First Last <email@arizona.edu> 
-Description: Research compendium for the project: Template
-License: GPLv3 + file LICENSE
+    person(given = "Vik",
+           family = "Ruhil", "vik.ruhil@arizona.edu", role = c("aut", "cre"))
+    person(given= "Saksham",
+           family="Gupta","sakshamgupta9@arizona.edu",role=c("aut",cre"))
+Maintainer: First Last <email@arizona.edu> --both name
+Description: Research compendium for the project: Template--summary me
+License: OPEN License
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
