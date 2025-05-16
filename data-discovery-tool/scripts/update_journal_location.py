@@ -15,7 +15,7 @@ engine = create_engine(f"sqlite:///{db_path}")
 Session = sessionmaker(bind=engine)
 session = Session()
 
-print("🔁 Updating Journal.location based on FieldStation...")
+print(" Updating Journal.location based on FieldStation...")
 
 # Query journals with field_station_id set
 journals_to_update = session.query(Journal).filter(Journal.field_station_id != None).all()
@@ -33,4 +33,4 @@ for journal in journals_to_update:
 session.commit()
 session.close()
 
-print(f"✅ Updated location for {count} journals.")
+print(f" Updated location for {count} journals.")

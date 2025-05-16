@@ -15,10 +15,10 @@ with open("data/raw/54d7df8f-d016-72c1-1841-ff05652a4c9f-jsonl.jsonl", "r", enco
                 })
                 break  # Stop after first match per record
 
-print(f"✅ Found {len(matches)} potential mentions in metadata.\n")
+print(f"Found {len(matches)} potential mentions in metadata.\n")
 
 for m in matches[:5]:
-    print(f"📘 Title: {m['title']}")
-    print(f"🔎 Match in: {m['match_in']}")
-    print(f"📄 Snippet: {m['value']}\n")
+    print(f"Title: {m['title']}")
+    print(f"Match in: {m['match_in']}")
+    print(f"Snippet: {m['value']}\n")
     print("=" * 80)

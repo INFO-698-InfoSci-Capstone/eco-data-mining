@@ -13,6 +13,6 @@ with open("data/raw/54d7df8f-d016-72c1-1841-ff05652a4c9f-jsonl.jsonl", "r", enco
         if full_text:
             print(f"Excerpt: {full_text[:300]}...\n")
         else:
-            print("❌ No full text available.\n")
+            print("No full text available.\n")
 
         print("=" * 80)

@@ -19,7 +19,7 @@ with open_func(input_path, "rt", encoding="utf-8") as f:
             record = json.loads(line)
             records.append(record)
         except json.JSONDecodeError as e:
-            print(f"⚠️ Skipping invalid line: {e}")
+            print(f"Skipping invalid line: {e}")
             continue
 
 # ====== Write to JSON file ======
@@ -27,4 +27,4 @@ output_path.parent.mkdir(parents=True, exist_ok=True)
 with open(output_path, "w", encoding="utf-8") as out:
     json.dump(records, out, indent=2)
 
-print(f"✅ First 10 records saved to: {output_path}")
+print(f"First 10 records saved to: {output_path}")

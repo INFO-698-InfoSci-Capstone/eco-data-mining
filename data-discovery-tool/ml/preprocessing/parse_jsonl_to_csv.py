@@ -15,16 +15,16 @@ file_name = "ecology_full_50k.jsonl.gz"
 file_path = DATA_RAW_DIR / file_name
 output_path = DATA_PROCESSED_DIR / "ecology_dataset_50k.csv"
 
-print(f"🔍 Final resolved file path: {file_path}")
-print(f"🧪 File exists? {file_path.exists()}")
+print(f"Final resolved file path: {file_path}")
+print(f"File exists? {file_path.exists()}")
 
 if not file_path.exists():
-    raise FileNotFoundError(f"🚫 File not found at: {file_path}")
+    raise FileNotFoundError(f"File not found at: {file_path}")
 
 # --------------------------------------
 # Pass 1: Collect all unique fieldnames
 # --------------------------------------
-print("🔍 Pass 1: Scanning for fieldnames...")
+print("Pass 1: Scanning for fieldnames...")
 fieldnames = set()
 
 with gzip.open(file_path, 'rt', encoding='utf-8') as f:
@@ -33,15 +33,15 @@ with gzip.open(file_path, 'rt', encoding='utf-8') as f:
             record = json.loads(line)
             fieldnames.update(record.keys())
         except Exception as e:
-            print(f"⚠️ Skipping line due to JSON decode error: {e}")
+            print(f"Skipping line due to JSON decode error: {e}")
 
 fieldnames = sorted(fieldnames)
-print(f"📑 Total unique fields found: {len(fieldnames)}")
+print(f"Total unique fields found: {len(fieldnames)}")
 
 # --------------------------------------
 # Pass 2: Write data to CSV
 # --------------------------------------
-print("✍️ Pass 2: Writing CSV...")
+print("Pass 2: Writing CSV...")
 with gzip.open(file_path, 'rt', encoding='utf-8') as f, \
      open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
 
@@ -53,6 +53,6 @@ with gzip.open(file_path, 'rt', encoding='utf-8') as f, \
             row = json.loads(line)
             writer.writerow(row)
         except Exception as e:
-            print(f"⚠️ Skipping row due to error: {e}")
+            print(f"Skipping row due to error: {e}")
 
-print(f"✅ CSV successfully saved to: {output_path}")
+print(f"CSV successfully saved to: {output_path}")

@@ -33,4 +33,4 @@ for col in columns:
         print(f"   Examples: {examples}")
 
 conn.close()
-print("\n✅ Done listing filled entries.")
+print("\nDone listing filled entries.")

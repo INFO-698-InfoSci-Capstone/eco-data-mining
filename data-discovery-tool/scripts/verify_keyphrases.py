@@ -31,7 +31,7 @@ def main():
             total_trigrams += len(trigrams)
             total_others += len(others)
 
-    print("🔍 N-gram Summary Across All Journals:")
+    print(" N-gram Summary Across All Journals:")
     print(f"  • Total Journals Checked: {len(journals)}")
     print(f"  • Total Unigrams: {total_unigrams}")
     print(f"  • Total Bigrams: {total_bigrams}")

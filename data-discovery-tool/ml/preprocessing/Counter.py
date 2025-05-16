@@ -20,8 +20,8 @@ with open(file_path, "r", encoding="utf-8") as f:
                 total_word_count += word_count
                 entries_with_text += 1
         except json.JSONDecodeError:
-            print(f"⚠️ Skipping malformed line at entry {entry_count}")
+            print(f"Skipping malformed line at entry {entry_count}")
 
-print("📄 Total entries:", entry_count)
-print("✅ Entries with full text:", entries_with_text)
-print("🔢 Total words in all fullText fields:", total_word_count)
+print("Total entries:", entry_count)
+print("Entries with full text:", entries_with_text)
+print("Total words in all fullText fields:", total_word_count)

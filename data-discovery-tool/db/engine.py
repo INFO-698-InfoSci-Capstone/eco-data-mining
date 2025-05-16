@@ -11,4 +11,4 @@ DATABASE_URL = f"sqlite:///{db_path}"
 engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-print(f"✅ Connected to DB at: {db_path}")
+print(f" Connected to DB at: {db_path}")

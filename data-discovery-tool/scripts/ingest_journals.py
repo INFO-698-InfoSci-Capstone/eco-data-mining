@@ -17,7 +17,7 @@ engine = create_engine(f"sqlite:///{db_path}")
 Session = sessionmaker(bind=engine)
 session = Session()
 
-print("🔄 Ingesting journal records with n-gram metadata...")
+print(" Ingesting journal records with n-gram metadata...")
 
 # ===== Read JSONL File =====
 jsonl_path = Path("data/raw/54d7df8f-d016-72c1-1841-ff05652a4c9f-jsonl.jsonl").resolve()
@@ -83,4 +83,4 @@ with open(jsonl_path, "r", encoding="utf-8") as f:
 session.commit()
 session.close()
 
-print(f"✅ Ingestion complete. Source: {jsonl_path.name}")
+print(f" Ingestion complete. Source: {jsonl_path.name}")

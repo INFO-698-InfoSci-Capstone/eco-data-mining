@@ -20,7 +20,7 @@ print("🔍 Viewing a full journal record...")
 journal = session.query(Journal).first()
 
 if not journal:
-    print("❌ No journal entries found.")
+    print("No journal entries found.")
     session.close()
     sys.exit()
 
@@ -29,18 +29,18 @@ nlp_entry = session.query(JournalNLP).filter_by(journal_id=journal.id).first()
 station_entry = session.query(FieldStation).filter_by(id=journal.field_station_id).first()
 
 # ====== Pretty print results ======
-print("\n📘 Journal Record:")
+print("\nJournal Record:")
 for col in Journal.__table__.columns:
     print(f"  {col.name}: {getattr(journal, col.name)}")
 
-print("\n🧠 NLP Record:")
+print("\nNLP Record:")
 if nlp_entry:
     for col in JournalNLP.__table__.columns:
         print(f"  {col.name}: {getattr(nlp_entry, col.name)}")
 else:
     print("  None")
 
-print("\n📍 Field Station Record:")
+print("\n Field Station Record:")
 if station_entry:
     for col in FieldStation.__table__.columns:
         print(f"  {col.name}: {getattr(station_entry, col.name)}")

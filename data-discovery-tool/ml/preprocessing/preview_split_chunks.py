@@ -17,9 +17,9 @@ preview_rows = 3
 chunk_files = sorted(splits_dir.glob("*.csv"))
 
 if not chunk_files:
-    print("🚫 No chunk files found in splits directory.")
+    print("No chunk files found in splits directory.")
 else:
     for chunk_file in chunk_files:
-        print(f"\n📂 Previewing: {chunk_file.name}")
+        print(f"\n Previewing: {chunk_file.name}")
         df = pd.read_csv(chunk_file, nrows=preview_rows)
         print(df.head(preview_rows))

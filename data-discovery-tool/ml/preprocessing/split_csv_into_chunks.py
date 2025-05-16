@@ -18,14 +18,14 @@ output_dir.mkdir(parents=True, exist_ok=True)
 chunk_size = 1000
 chunk_number = 1
 
-print(f"📂 Splitting: {input_path}")
-print(f"📤 Output to: {output_dir}")
+print(f"Splitting: {input_path}")
+print(f"Output to: {output_dir}")
 
 # Stream the CSV file in chunks
 for chunk in pd.read_csv(input_path, chunksize=chunk_size):
     output_file = output_dir / f"ecology_dataset_chunk_{chunk_number}.csv"
     chunk.to_csv(output_file, index=False)
-    print(f"✅ Chunk {chunk_number} saved: {output_file.name}")
+    print(f"Chunk {chunk_number} saved: {output_file.name}")
     chunk_number += 1
 
-print("🎉 All chunks saved successfully!")
+print("All chunks saved successfully!")

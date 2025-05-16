@@ -40,17 +40,17 @@ for journal_id, full_text in journals:
             INSERT INTO field_stations (id, name, location, created_at)
             VALUES (?, ?, ?, ?)
         """, (station_id, candidate_location, candidate_location, datetime.utcnow()))
-        print(f"🆕 Created new FieldStation: {candidate_location}")
+        print(f"Created new FieldStation: {candidate_location}")
 
     # Update journal with field_station_id
     cursor.execute("""
         UPDATE journals SET field_station_id = ? WHERE id = ?
     """, (station_id, journal_id))
     linked_count += 1
-    print(f"✅ Linked Journal {journal_id} to FieldStation {candidate_location}")
+    print(f"Linked Journal {journal_id} to FieldStation {candidate_location}")
 
 # Commit changes
 conn.commit()
 conn.close()
 
-print(f"\n✅ Completed linking. Total journals linked: {linked_count}")
+print(f"\nCompleted linking. Total journals linked: {linked_count}")
