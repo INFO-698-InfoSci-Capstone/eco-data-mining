@@ -20,135 +20,30 @@ Eco Data Mining is an extensible and modular platform designed to automate the d
 ## Project Architecture
 
 ```
-(venv) PS C:\Users\VikRuhil\Desktop\MS DS\Capstone\Eco Data Mining\eco-data-mining\data-discovery-tool> py.exe .\extract_dir.py
-data-discovery-tool/
-├── README.md
-├── __pycache__
-├── api
-│   ├── constellete
-│   │   ├── fetch_sample.py
-│   │   ├── fetch_stations.py
-│   │   ├── login_test_constellete.py
-│   │   └── venv
-│   ├── jstor
-│   └── utils
-├── config.py
-├── data
-│   ├── eco.db
-│   ├── images
-│   │   ├── authers_per_publications.png
-│   │   ├── keyphrase_cloud.png
-│   │   ├── location word cloud.png
-│   │   └── publication_over_time.png
-│   ├── models
-│   ├── processed
-│   │   ├── ecology_dataset_50k.csv
-│   │   ├── first_10_records.json
-│   │   ├── first_record.json
-│   │   └── splits
-│   │       ├── ecology_dataset_chunk_1.csv
-│   │       ├── ecology_dataset_chunk_10.csv
-│   │       ├── ecology_dataset_chunk_11.csv
-│   │       ├── ecology_dataset_chunk_12.csv
-│   │       ├── ecology_dataset_chunk_13.csv
-│   │       ├── ecology_dataset_chunk_14.csv
-│   │       ├── ecology_dataset_chunk_15.csv
-│   │       ├── ecology_dataset_chunk_16.csv
-│   │       ├── ecology_dataset_chunk_17.csv
-│   │       ├── ecology_dataset_chunk_18.csv
-│   │       ├── ecology_dataset_chunk_19.csv
-│   │       ├── ecology_dataset_chunk_2.csv
-│   │       ├── ecology_dataset_chunk_20.csv
-│   │       ├── ecology_dataset_chunk_21.csv
-│   │       ├── ecology_dataset_chunk_22.csv
-│   │       ├── ecology_dataset_chunk_23.csv
-│   │       ├── ecology_dataset_chunk_24.csv
-│   │       ├── ecology_dataset_chunk_25.csv
-│   │       ├── ecology_dataset_chunk_26.csv
-│   │       ├── ecology_dataset_chunk_27.csv
-│   │       ├── ecology_dataset_chunk_28.csv
-│   │       ├── ecology_dataset_chunk_29.csv
-│   │       ├── ecology_dataset_chunk_3.csv
-│   │       ├── ecology_dataset_chunk_30.csv
-│   │       ├── ecology_dataset_chunk_31.csv
-│   │       ├── ecology_dataset_chunk_32.csv
-│   │       ├── ecology_dataset_chunk_33.csv
-│   │       ├── ecology_dataset_chunk_34.csv
-│   │       ├── ecology_dataset_chunk_35.csv
-│   │       ├── ecology_dataset_chunk_36.csv
-│   │       ├── ecology_dataset_chunk_37.csv
-│   │       ├── ecology_dataset_chunk_38.csv
-│   │       ├── ecology_dataset_chunk_39.csv
-│   │       ├── ecology_dataset_chunk_4.csv
-│   │       ├── ecology_dataset_chunk_40.csv
-│   │       ├── ecology_dataset_chunk_41.csv
-│   │       ├── ecology_dataset_chunk_42.csv
-│   │       ├── ecology_dataset_chunk_43.csv
-│   │       ├── ecology_dataset_chunk_44.csv
-│   │       ├── ecology_dataset_chunk_45.csv
-│   │       ├── ecology_dataset_chunk_46.csv
-│   │       ├── ecology_dataset_chunk_47.csv
-│   │       ├── ecology_dataset_chunk_48.csv
-│   │       ├── ecology_dataset_chunk_49.csv
-│   │       ├── ecology_dataset_chunk_5.csv
-│   │       ├── ecology_dataset_chunk_50.csv
-│   │       ├── ecology_dataset_chunk_6.csv
-│   │       ├── ecology_dataset_chunk_7.csv
-│   │       ├── ecology_dataset_chunk_8.csv
-│   │       └── ecology_dataset_chunk_9.csv
-│   └── raw
-│       ├── 54d7df8f-d016-72c1-1841-ff05652a4c9f-jsonl.jsonl
-│       ├── 944ad6df-e4b8-af27-d4f3-123f483acf35-jsonl.jsonl
-│       ├── ecology_full_50k.jsonl
-│       ├── ecology_full_50k.jsonl.gz
-│       ├── ecology_sample_eeb16c.json
-│       └── eeb16cb4-a04a-5e68-3f20-8d5e677fd5ac-jsonl.jsonl
-├── db
-│   ├── __pycache__
-│   ├── engine.py
-│   ├── migrations
-│   └── models.py
-├── debug_path_check.py
-├── docker
-├── docs
-├── extract_dir.py
-├── ml
-│   ├── embeddings
-│   ├── evaluation
-│   ├── models
-│   ├── preprocessing
-│   │   ├── Counter.py
-│   │   ├── extracting_fieldstationNLP.py
-│   │   ├── field_search.py
-│   │   ├── parse_jsonl_to_csv.py
-│   │   ├── preview_split_chunks.py
-│   │   ├── read_record_jsonl.py
-│   │   ├── split_csv_into_chunks.py
-│   │   └── testing_json.py
-│   └── training
-├── notebooks
-│   └── Sample_read_jsonl.ipynb
-├── requirements.txt
-├── scripts
-│   ├── __pycache__
-│   ├── db_journalschema_py
-│   ├── db_sanity_check.py
-│   ├── db_verification.py
-│   ├── ingest_journals.py
-│   ├── setup_db.py
-│   ├── update_journal_location.py
-│   ├── verify_journals.py
-│   ├── verify_keyphrases.py
-│   └── visualization.py
-├── services
-│   ├── api
-│   └── ui
-│       └── static
-├── tests
-│   ├── api
-│   ├── integration
-│   └── ml
-└── venv
+eco-data-mining/
+├── data/
+│   ├── eco.db                    # SQLite database (excluded from Git)
+│   ├── obfs_fieldstations.csv    # OBFS field station list
+│   ├── neon_fieldstations.csv    # NEON field station list
+│   └── raw/                      # Raw data files (JSONL, CSV, etc.)
+├── db/
+│   ├── models.py                 # SQLAlchemy ORM models
+│   ├── engine.py                 # Database connection engine
+│   └── connection.py             # DB connector with safe path handling
+├── ml/
+│   ├── preprocessing/
+│   │   ├── extracting_fieldstationNLP.py  # NLP-based field station extractor
+│   │   └── generate_ngrams.py            # N-gram extraction processor
+│   └── models/                  # (Planned) custom NLP models
+├── notebooks/
+│   └── exploratory_analysis.ipynb        # Data exploration and validation
+├── scripts/
+│   ├── ingest_journals.py        # Journal ingestion
+│   ├── verify_journals.py        # Data completeness verifier
+│   ├── db_sanity_check.py        # Schema and integrity validator
+│   └── update_journal_location.py# Linking journals to field stations
+├── .gitignore
+└── README.md
 ```
 
 ---
