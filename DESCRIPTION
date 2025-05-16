@@ -3,12 +3,13 @@ Title: "EcoMine: A Data Discovery Tool Intelligent Metadata Extraction from Ecol
 Version: 1.10.
 Authors:
     person(given = "Vik",
-           family = "Ruhil", "vik.ruhil@arizona.edu", role = c("aut", "cre"))
+           family = "Ruhil", "vikruhil@arizona.edu", role = c("aut", "cre"))
     person(given= "Saksham",
            family="Gupta","sakshamgupta9@arizona.edu",role=c("aut",cre"))
-Maintainer: Vik Ruhil <vik.ruhil@arizona.edu> 
+Maintainer: Vik Ruhil <vikruhil@arizona.edu> 
             Saksham Gupta <sakshamgupta9@arizona.edu>
-Description: Research compendium for the project: Template--summary me
+Description: EcoMine is an AI-powered platform that extracts and structures ecological knowledge from research literature using deep learning. It enables fast, searchable, and interactive access to species data, methods, and trends for researchers, policymakers, and educators.
+
 License: OPEN License
 ByteCompile: true
 Encoding: UTF-8
